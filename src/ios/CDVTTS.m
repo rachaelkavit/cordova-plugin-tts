@@ -65,10 +65,10 @@
     }
 
     if([voiceType isEqualToString:@"Male"]){
-        voice = @"com.apple.ttsbundle.siri_male_".locale."_compact";
+        voice = @"com.apple.ttsbundle.siri_male_"+locale+"_compact";
     }
     else{
-        voice = @"com.apple.ttsbundle.siri_female_".locale."_compact";
+        voice = @"com.apple.ttsbundle.siri_female_"+locale+"_compact";
     }
     
     AVSpeechUtterance* utterance = [[AVSpeechUtterance new] initWithString:text];
