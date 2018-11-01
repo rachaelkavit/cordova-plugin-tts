@@ -65,14 +65,12 @@
     }
 
     if([voiceType isEqualToString:@"Male"]){
-        voice = @"com.apple.ttsbundle.siri_male_";
-        voice = [voice stringByAppendingString:@locale];
-        voice = [voice stringByAppendingString:@"_compact";
+        //voice = @"com.apple.ttsbundle.siri_male_"locale"_compact";
+        voice = [NSString stringWithFormat:@"com.apple.ttsbundle.siri_male_%@_compact", locale];
     }
     else{
-        voice = @"com.apple.ttsbundle.siri_female_";
-        voice = [voice stringByAppendingString:@locale];
-        voice = [voice stringByAppendingString:@"_compact";
+        //voice = @"com.apple.ttsbundle.siri_female_"locale"_compact";
+        voice = [NSString stringWithFormat:@"com.apple.ttsbundle.siri_female_%@_compact", locale];
     }
     
     AVSpeechUtterance* utterance = [[AVSpeechUtterance new] initWithString:text];
